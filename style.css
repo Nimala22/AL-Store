@@ -103,3 +103,572 @@ h4 {
   font-size: 1em;
   font-weight: var(--fw6);
 }
+
+/* REUSABLE Selector */
+.container {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0 0.938em;
+}
+
+.column {
+  margin-left: -0.938em;
+  margin-right: -0.938em;
+}
+
+.column .row {
+  padding: 0 0.938em;
+}
+
+.flexwrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flexcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexitem {
+  display: flex;
+  align-items: center;
+}
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.main-links a:hover {
+  color: Var(--secondary-color);
+}
+
+.second-links a:hover {
+  color: Var(--light-text-color);
+}
+
+.icon-small,
+.icon-large {
+  display: flex;
+  align-items: center;
+  padding: 0 0.25em;
+  font-weight: normal;
+}
+
+.icon-small {
+  font-size: 1em;
+  margin-left: auto;
+}
+
+.icon-large {
+  font-size: 1.75em;
+  padding: 0 0.75em 0 0;
+}
+
+.mobile-hide {
+  display: none;
+}
+
+.object-cover img {
+  position: absolute;
+  object-fit: cover;
+  width: var(--percent100);
+  height: var(--percent100);
+  display: block;
+}
+
+.products .media {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.primary-button,
+.secondary-button,
+.light-button {
+  font-size: var(--font-small);
+  padding: 0.9em 2em;
+  height: auto;
+  width: fit-content;
+  border-radius: 2em;
+  transition: var(--trans-background-color);
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.primary-button:hover {
+  background-color: var(--dark-color);
+}
+
+.secondary-button {
+  background-color: var(--secondary-dark-color);
+  color: var(--white-color);
+}
+
+.secondary-button:hover {
+  background-color: var(--light-bg-color);
+  color: var(--secondary-dark-color);
+}
+
+.light-button {
+  background-color: var(--light-bg-color);
+}
+
+.light-button:hover {
+  background-color: var(--secondary-dark-color);
+  color: var(--white-color);
+}
+
+.view-all {
+  font-size: var(--font-small);
+  display: flex;
+  gap: 1em;
+  transition: var(--trans-color);
+}
+
+.mini-text {
+  font-size: var(--font-smaller);
+  color: var(--light-text-color);
+}
+
+/* 
+
+|||||||||||||||||||||||||||||||
+          Website Map 
+|||||||||||||||||||||||||||||||
+
+  00. REUSABLE Selector
+
+  01. Header
+      a. Header Top
+      b. Header Nav
+      c. Header Main, Departments Category
+      d. Search Form
+      e. Responsive Menu - Off Canvas
+
+  02. Slider
+  03. Brands
+  04. Product
+      a. Global product
+      b. Big product
+      c. Mini product
+      d. Main product
+
+  05. Banner
+      a. News letter
+      b. Widgets
+      c. Footer Info
+
+  06. Bottom Menu
+      a. Search
+
+  07. Overlay
+  08. Page Single
+      a. Breadcrumb 
+      b. Product details
+      c. Product description
+      d. Product review
+      e. Product review form
+
+  09. Page single: Special Offer
+  10. Page category
+      a. Sidebar products filter
+      b. Products block
+
+  11. Cart 
+  12. Page Cart 
+  13. Page Checkout 
+  14. Modal 
+  14. Modal 
+
+*/
+
+/*
+======================================
+      01. header section css
+======================================
+*/
+
+:where(.off-canvas, header) li > a {
+  display: flex;
+  position: relative;
+  line-height: inherit;
+  transition: var(--trans-color);
+}
+
+/* |||| header Top Css |||| */
+
+.header-top .wrapper {
+  font-size: var(--font-small);
+  font-weight: var(--fw4);
+  justify-content: space-between;
+  line-height: 42px;
+}
+
+.header-top .wrapper ul {
+  gap: 2em;
+}
+
+.header-top li {
+  position: relative;
+}
+
+.header-top ul ul {
+  position: absolute;
+  left: -1em;
+  line-height: 2em;
+  background-color: var(--white-color);
+  border: 1px solid var(--border-color);
+  z-index: 1;
+  display: none;
+}
+
+:where(.header-top, .thetop-nav) .right ul ul li a {
+  padding: 0.25em 1em;
+}
+
+:where(.header-top, .thetop-nav) .right ul ul li.current a {
+  background-color: var(--border-color);
+}
+
+.header-top li:hover ul {
+  display: block;
+}
+
+/* |||| header Nav Css |||| */
+.header-nav {
+  padding: 0.5em 0;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.trigger {
+  font-size: 1.5em;
+  display: flex;
+  padding: 0.25em;
+  margin-right: 0.5em;
+}
+
+.logo a {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.75em;
+  font-weight: var(--fw8);
+  position: relative;
+  display: flex;
+  padding-left: 0.75em;
+  margin-right: 2em;
+}
+
+.circle {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--percent50);
+  background-color: var(--light-bg-color);
+  z-index: 1;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--percent50);
+  background-color: var(--secondary-color);
+  bottom: 5px;
+  right: 5px;
+  opacity: 0.5;
+}
+
+.header-nav nav > ul {
+  line-height: 100px;
+  gap: 2em;
+}
+
+.fly-item {
+  position: absolute;
+  height: 16px;
+  font-size: var(--font-smaller);
+  padding: 1px;
+  text-align: center;
+  line-height: 10px;
+  color: var(--white-color);
+}
+
+nav .fly-item {
+  top: 50%;
+  margin-top: -24px;
+  width: 30px;
+  border-radius: 3px;
+  right: -32px;
+  background-color: var(--primary-color);
+}
+
+.header-nav .right {
+  position: relative;
+  margin-left: auto;
+}
+
+.header-nav .right .icon-large {
+  position: relative;
+}
+
+.header-nav .right .fly-item {
+  top: 0;
+  right: 17px;
+  width: 17px;
+  background-color: var(--primary-color);
+  border-radius: var(--percent50);
+}
+
+.mega .flexcol {
+  flex: 1;
+  min-width: 100px;
+  padding-right: 2.5em;
+  margin-bottom: 1.5em;
+  z-index: 1;
+}
+
+/* main-header section CSS */
+.header-main {
+  background-color: var(--secondary-dark-color);
+  padding: 1.5rem 0;
+  margin-bottom: 2em;
+}
+
+.header-main .dpt-cat {
+  position: relative;
+  z-index: 10;
+}
+
+.dpt-cat .dpt-head {
+  position: relative;
+  width: 300px;
+  padding: 0.77em 1.5em;
+  background-color: var(--primary-color);
+  border-radius: 7px 7px 0 0;
+  color: var(--white-color);
+  margin-bottom: -2.15em;
+}
+
+.dpt-cat .dpt-head .main-text {
+  color: var(--light-bg-color);
+}
+
+.dpt-cat .dpt-trigger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1.3em;
+  height: 60px;
+  width: 60px;
+}
+
+.dpt-menu > ul > li > a {
+  font-size: var(--font-small);
+  height: 46px;
+  align-items: center;
+}
+
+.dpt-menu .has-child:hover ul {
+  display: block;
+}
+
+.dpt-menu .has-child li a:hover {
+  text-decoration: underline;
+}
+
+/* search section */
+.header-main .right {
+  flex: 1;
+}
+
+form {
+  position: relative;
+}
+
+form.search input {
+  line-height: 3.25em;
+  padding: 0 7em 0 4.5em;
+  border: 0;
+  outline: 0;
+  width: var(--percent100);
+  border-radius: 7px;
+  font-size: 0.9em;
+  font-weight: var(--fw3);
+}
+
+form.search :where(span, button) {
+  position: absolute;
+  top: 0;
+  padding: 0.55em 1.5em;
+  font-size: 1em;
+  color: var(--light-text-color);
+  height: var(--percent100);
+}
+
+form.search button {
+  right: 0;
+  border: 0;
+  outline: 0;
+  font-size: 0.875em;
+  font-weight: var(--fw6);
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  cursor: pointer;
+  transition: var(--trans-background);
+}
+
+form.search button:hover {
+  background-color: var(--dark-color);
+}
+
+/*
+01. Header-----------------------
+ e. responsive menu off canvas 
+*/
+.site-off {
+  position: fixed;
+  width: 320px;
+  height: var(--percent100);
+  background-color: var(--white-color);
+  overflow-y: auto;
+  z-index: 1000;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform .4s, visibility .4s;
+  will-change: transform, visibility;
+}
+
+.showmenu .site-off{
+  transform: translateX(0);
+  visibility: visible;
+  transform: transform .4s 0s, visibility 0s 0s,
+}
+
+.off-canvas {
+  width: var(--percent100);
+  height: var(--percent100);
+  touch-action: auto;
+  padding: 1.5em;
+}
+
+.off-canvas .canvas-head {
+  color: var(--white-color);
+  justify-content: space-between;
+  padding: 1.5em;
+  margin: 1.5em -1.5em;
+  background-color: var(--secondary-dark-color);
+  border-bottom-right-radius: 160px 25px;
+}
+
+.off-canvas .canvas-head .logo {
+  z-index: 10;
+  position: relative;
+}
+
+.off-canvas .canvas-head .logo .circle {
+  opacity: 0.75;
+}
+
+.t-close {
+  font-size: 1.3em;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--percent50);
+  background-color: var(--secondary-dark-color);
+  color: var(--white-color);
+  transition: var(--trans-background-color);
+}
+
+.t-close:hover {
+  background-color: var(--white-color);
+  color: var(--secondary-dark-color);
+  opacity: 0.75;
+}
+
+.off-canvas .dpt-head {
+  font-size: var(--font-small);
+  padding: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  background-color: var(--light-bg-color);
+  border-radius: 7px 7px 0 0;
+}
+
+.off-canvas .has-child > :where(ul, .mega) {
+  font-size: var(--font-small);
+  font-weight: var(--fw3);
+  line-height: 28px;
+  padding-left: 3em;
+
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.off-canvas .expand > :where(ul, .mega) {
+  max-height: 2000px;
+}
+
+.off-canvas .thetop-nav ul,
+.off-canvas nav > ul {
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: var(--font-small);
+  line-height: 36px;
+  padding-top: 1.25em;
+  margin: 1.25em 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.off-canvas nav .mega {
+  padding: 0;
+}
+
+.off-canvas nav .mega .products {
+  display: none;
+}
+
+.off-canvas .has-child .icon-small {
+  padding: 0.5em;
+  line-height: initial;
+}
+
+.off-canvas .dpt-menu .icon-small i {
+  transform: rotate(90deg);
+}
+
+.off-canvas .has-child {
+  width: var(--percent100);
+}
+
+.off-canvas
+  .thetop-nav
+  .right
+  > ul
+  > :where(:nth-child(4), li:nth-child(5))
+  > a {
+  display: none;
+}
+
+.off-canvas .thetop-nav .right ul ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.off-canvas .thetop-nav .right ul ul li a {
+  padding: 0.5em;
+  border: 1px solid var(--border-color);
+  line-height: 16px;
+  margin: 0 0.5em 0.5em 0;
+}
