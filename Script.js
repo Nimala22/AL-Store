@@ -30,9 +30,7 @@ menuButton.addEventListener('click', function(){
 closeButton.addEventListener('click', function(){
   addClass.classList.remove('showmenu')
 })
-
-
-    
+   
 
 // Show sub menu on mobile
 const submenu = document.querySelectorAll('.has-child .icon-small');
@@ -44,3 +42,13 @@ function toggle(e) {
   if (this.closest('.has-child').classList != 'expand');
   this.closest('.has-child').classList.toggle('expand')
 }
+
+// Slider  
+const swiper = new Swiper('.swiper', {  
+  loop: true,
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  
+});

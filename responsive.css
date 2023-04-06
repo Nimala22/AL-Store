@@ -1,3 +1,12 @@
+@media screen and (min-width: 768px) {
+  .products .price .current{
+    font-size: 1.25em;
+  }
+  .products.mini .item {
+    flex: 0 0 50%;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .container {
     padding: 0 2em;
@@ -190,7 +199,21 @@
     display: flex;
   }
 
+   /* slider */
+   .slider > div > .wrapper{
+    width: calc(100% - (300px + 2em));
+    margin-left: auto;
+  }
 
+  /* products section */
+  .trending .products {
+    flex: 0 0 33.3333%;
+  }
+
+  .products.big .media{
+    max-height: 373px;
+  }
+  
 
 
 

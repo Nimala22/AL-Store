@@ -672,3 +672,318 @@ form.search button:hover {
   line-height: 16px;
   margin: 0 0.5em 0.5em 0;
 }
+/*
+======================================
+      02. slider section css
+======================================
+*/
+.slider .item {
+  position: relative;
+  height: 474px;
+}
+.slider .item::before{
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 450px;
+  height: 300px;
+  background-color: var(--white-color);
+  z-index: 1;
+  filter: blur(50px);
+  opacity: .8;
+}
+
+.slider .text-content{
+  position: relative;
+  height: var(--percent100);
+  justify-content: flex-end;
+  padding: 0 0 10% 10%;
+  z-index: 1;
+}
+
+.slider h4{
+  font-size: var(--font-small);
+  font-weight: var(--fw7);
+  width: fit-content;
+  padding: 4px 10px;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-radius: 4px;
+}
+
+.slider .text-content :where(h2,h3) span:first-child{
+  font-weight: var(--fw3);
+  color: var(--light-text-color);
+}
+
+.slider .text-content :where(h2,h3) span:last-child{
+  color: var(--secondary-dark-color);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active{
+  background-color: var(--secondary-dark-color);
+}
+
+/* ||||| 2.1 Brands section CSS ||||| */
+.brands .wrapper{
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2em 0;
+}
+
+.brands .item img{
+  opacity: .25;
+  transition: opacity .3s;
+}
+
+.brands .item a:hover img{
+  opacity: 1;
+}
+/* ||||| 2.2 products block style section CSS ||||| */
+.sectop{
+  justify-content: space-between;
+  padding-bottom: 0.5em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sectop h2{
+  position: relative;
+  font-size: 1.5em;
+  font-weight: var(--fw7);
+}
+
+.sectop h2 span:not(.circle) {
+  padding: 0 0 0 2em;
+}
+
+.sectop h2 .circle {
+  top: -5px;
+}
+
+/* |||| 04. Products a. Global product |||| */
+.products .offer {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.products .offer p{
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+
+.products .offer ul{
+  gap: 1em;
+}
+
+.products .offer ul li{
+  position: relative;
+  width: 34px;
+  height: 34px;
+  padding: .5em;
+  line-height: initial;
+  color: var(--secondary-dark-color);
+  background-color: var(--light-bg-color);
+  border-radius: 5px;
+}
+
+.products .offer ul li:not(:last-child)::before{
+  content: ':';
+  position: absolute;
+  right: -.6em;
+  color: var(--light-text-color);
+}
+
+.products :where(.image, .thumbnail) img{
+  transition: transform .3s;
+}
+
+.products :where(.image, .thumbnail):hover img{
+  transform: scale(1.2);
+}
+
+.products .hoverableL{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.products .hoverableL li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: .25em;
+  margin: .25em;
+  border-radius: var(--percent50);
+  line-height: 1;
+  background-color: var(--white-color);
+  opacity: .5;
+  transition: var(--trans-background-color), opacity .3s;
+}
+
+.products .item:hover .hoverableL li a{
+  opacity: 1;
+}
+
+.products .hoverableL li a:hover{
+  color: var(--white-color);
+  background-color: var(--dark-color);
+}
+
+.products .hoverableL li.active a:hover{
+  background-color: var(--primary-color);
+}
+
+.products .hoverableL li:not(.active){
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform .3s, opacity .2s;
+}
+
+.products .item:hover .hoverableL li{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.products .hoverableL li:last-child{
+  transition-delay: .2s;
+}
+
+.products .discount{
+  top: auto;
+  right: 0;
+  left: auto;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.products .discount::before{
+  background-color: var(--dark-color);
+}
+
+.products .discount span{
+  position: relative;
+  font-size: var(--font-smaller);
+  font-weight: var(--fw5);
+  color: var(--white-color);
+}
+
+.products .content{
+  display: flex;
+  flex-direction: column;
+}
+
+.products:where(.big,.main.one) .content{
+  gap: 1em;
+  margin-top: 1.25em;
+}
+
+.products .rating{
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+.products .rating .stars ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+.products .rating .stars ul li i{
+  color: #03a50d;
+  margin: 0 5px;
+}
+
+.products h3{
+  font-family: "Rubik", sans-serif;
+  font-size: 1em;
+  overflow: hidden;
+  -webkit-box-orient: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.products h3 a:hover{
+  text-decoration: underline;
+}
+
+.products .price .current{
+  font-size: calc(1em + 1vw);
+  color: var(--primary-color);
+  margin-right: 0.25em;
+}
+
+.products .price .normal{
+  color: var(--light-text-color);
+  text-decoration: line-through;
+}
+
+.products .stock .qty{
+  display: flex;
+  justify-content: space-between;
+}
+
+.products .stock .bar{
+  height: 3px;
+  margin-top: 1em;
+  background-color: var(--border-color);
+  overflow: hidden;
+}
+
+.products .stock .available{
+  height: 3px;
+  width: 22%;
+  background-color: var(--secondary-color);
+}
+
+.products .item{
+  display: flex;
+  position: relative;
+}
+
+.products .stock-danger{
+  color: var(--primary-color);
+}
+
+.flexwrap .row{
+  flex: 0 0 100%;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+/* |||| Products .big products ||||  */
+.products.big .item{
+  flex-direction: column;
+  padding: 2.5em;
+  border: 2px solid var(--secondary-dark-color);
+  border-radius: 7px;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+
+/* |||| Products .mini products |||| */
+.products.mini .item {
+  margin-bottom: 2em;
+}
+
+.products.mini .media{
+  width: 130px;
+  height: 160px;
+  margin-right: 1.25em;
+}
+
+.products .content{
+  margin: 0;
+  gap: 0.75em;
+}
+
+.products:where(.mini,.main) h3{
+  font-weight: 400;
+}
